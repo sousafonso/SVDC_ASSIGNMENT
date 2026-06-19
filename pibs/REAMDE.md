@@ -1,0 +1,1 @@
+This dataset was downloaded from [World Bank: GDP per capita, PPP (current international $)](https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD?most_recent_value_desc=true&view=map&year_high_desc=true)

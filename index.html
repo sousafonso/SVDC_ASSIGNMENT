@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashboard 1 – Mix energético</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          sans-serif;
+        margin: 0;
+        padding: 16px 24px;
+        background: #f7f7fb;
+        color: #102a43;
+      }
+
+      h1 {
+        margin-bottom: 4px;
+      }
+
+      .subtitle {
+        margin-top: 0;
+        margin-bottom: 16px;
+        color: #627d98;
+        font-size: 14px;
+      }
+
+      .controls {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
+
+      #year-slider {
+        width: 220px;
+      }
+
+      .axis path,
+      .axis line {
+        stroke: #bcccdc;
+      }
+
+      .axis text {
+        fill: #334e68;
+        font-size: 11px;
+      }
+
+      .axis-label {
+        fill: #334e68;
+        font-size: 12px;
+      }
+
+      .highlight-country text {
+        font-weight: 600;
+      }
+
+      .legend {
+        font-size: 12px;
+        fill: #334e68;
+      }
+
+      .legend rect {
+        stroke: #9fb3c8;
+        stroke-width: 0.5;
+      }
+
+      .tooltip {
+        position: absolute;
+        pointer-events: none;
+        background: white;
+        border-radius: 4px;
+        border: 1px solid #d9e2ec;
+        padding: 6px 8px;
+        font-size: 12px;
+        color: #102a43;
+        box-shadow: 0 4px 8px rgba(15, 23, 42, 0.12);
+        opacity: 0;
+        transition: opacity 0.15s ease-out;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Dashboard 1 – Mix energético</h1>
+    <p class="subtitle">
+      Stacked bar chart por país num ano selecionado, com percentagem de
+      energia por fonte: renováveis, nuclear, fósseis. Portugal, Alemanha,
+      França e Espanha estão destacados.
+    </p>
+
+    <div class="controls">
+      <label for="year-slider">Ano:</label>
+      <input id="year-slider" type="range" />
+      <span id="year-value"></span>
+    </div>
+
+    <div id="energy-mix-chart"></div>
+
+    <div class="tooltip" id="tooltip"></div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
